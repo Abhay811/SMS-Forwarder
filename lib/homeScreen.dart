@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sms_forwarder/style.dart';
 import './ruleListScreen.dart';
 import './navigationDrawer.dart';
 
 class HomeScreen extends StatelessWidget {
-    int index = 0;
+  int index = 0;
   List<Widget> list = [
     RuleListScreen(),
   ];
@@ -14,16 +15,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('SMS Forwarder'),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                text: 'Rules',
-              ),
-              Tab(
-                text: 'Tools',
-              ),
-            ],
-          ),
+          backgroundColor: kThemebgColor,
         ),
         body: list[index],
         drawer: NavigationDrawer(),
