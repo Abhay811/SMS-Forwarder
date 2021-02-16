@@ -11,15 +11,13 @@ class CustomListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: Colors.grey),
-          ),
-        ),
+      child: Material(
+        type: MaterialType.transparency,
         child: InkWell(
-          splashColor: kThemebgColor,
-          onTap: onTap,
+          splashColor: Colors.greenAccent,
+          onTap: () {
+            // setState()
+          },
           child: Container(
             height: 50,
             child: Row(
@@ -37,7 +35,6 @@ class CustomListTile extends StatelessWidget {
                     ),
                   ],
                 ),
-                Icon(Icons.arrow_right)
               ],
             ),
           ),
