@@ -26,10 +26,12 @@ class RuleListScreen extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.white70,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20))),
+                color: Colors.white70,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
               child: ListView(
                 children: [
                   GestureDetector(
@@ -42,18 +44,19 @@ class RuleListScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       child: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Rule Name'),
-                              Text(
-                                'From:',
-                                style: TextStyle(
-                                    fontSize: 12, color: Colors.black54),
-                              )
-                            ],
-                          )),
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Rule Name'),
+                            Text(
+                              'From:',
+                              style: TextStyle(
+                                  fontSize: 12, color: Colors.black54),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],

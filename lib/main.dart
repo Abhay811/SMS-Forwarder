@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'ruleListScreen.dart';
+import 'package:sms_forwarder/homeScreen.dart';
 
 void main() {
-  runApp(Home());
+  runApp(
+    MaterialApp(
+      title: 'Text',
+      home: Home(),
+    ),
+  );
 }
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: RuleListScreen());
+    return HomeScreen();
   }
 }
