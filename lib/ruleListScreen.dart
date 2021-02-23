@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'style.dart';
+import 'package:sms_forwarder/addRule.dart';
+import './style.dart';
 
 class RuleListScreen extends StatelessWidget {
   @override
@@ -66,7 +67,14 @@ class RuleListScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return AddRule();
+            }),
+          );
+        },
         backgroundColor: kThemebgColor,
         child: Icon(Icons.add),
       ),

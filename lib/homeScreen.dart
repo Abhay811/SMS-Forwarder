@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sms_forwarder/style.dart';
+import './style.dart';
 import './ruleListScreen.dart';
 import './navigationDrawer.dart';
 
 class HomeScreen extends StatelessWidget {
-  int index = 0;
-  List<Widget> list = [
+  final int index = 0;
+  final List<Widget> list = [
     RuleListScreen(),
   ];
   @override

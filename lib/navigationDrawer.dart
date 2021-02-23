@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sms_forwarder/style.dart';
+import './style.dart';
 import './customListTile.dart';
 
 class NavigationDrawer extends StatelessWidget {

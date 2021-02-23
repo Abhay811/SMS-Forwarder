@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:sms_forwarder/homeScreen.dart';
+import './homeScreen.dart';
 
 void main() {
   runApp(
     MaterialApp(
       title: 'Text',
-      home: Home(),
+      home: _Home(),
     ),
   );
 }
 
-class Home extends StatelessWidget {
+class _Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return HomeScreen();
+    return Scaffold(
+      // appBar: AppBar(
+      //   // title: Text('SMS Forwarder'),
+      // ),
+      body: HomeScreen(),
+    );
   }
 }
+
