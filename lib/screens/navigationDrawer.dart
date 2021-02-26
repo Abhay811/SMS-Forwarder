@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './style.dart';
-import './customListTile.dart';
+import '../style.dart';
+import '../customListTile.dart';
 
 class NavigationDrawer extends StatelessWidget {
   @override

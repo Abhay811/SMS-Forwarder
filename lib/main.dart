@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sms_forwarder/homeScreen.dart';
-import './homeScreen.dart';
+import 'screens/homeScreen.dart';
 
 void main() {
   runApp(
@@ -22,4 +21,3 @@ class _Home extends StatelessWidget {
     );
   }
 }
-

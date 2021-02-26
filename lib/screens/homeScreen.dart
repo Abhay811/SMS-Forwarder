@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import './style.dart';
-import './ruleListScreen.dart';
-import './navigationDrawer.dart';
+import '../style.dart';
+import 'ruleListScreen.dart';
+import 'navigationDrawer.dart';
 
 class HomeScreen extends StatelessWidget {
-  final int index = 0;
-  final List<Widget> list = [
-    RuleListScreen(),
-  ];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -17,7 +13,7 @@ class HomeScreen extends StatelessWidget {
           title: Text('SMS Forwarder'),
           backgroundColor: kThemebgColor,
         ),
-        body: list[index],
+        body: RuleListScreen(),
         drawer: NavigationDrawer(),
       ),
     );
