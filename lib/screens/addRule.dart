@@ -43,8 +43,8 @@ class AddRuleScreen extends State<AddRule> {
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
         onSubmitted: (newValue) {
           setState(() {
-            rule.ruleName = newValue;
             _isEditingText = false;
+            rule.ruleName = newValue;
           });
         },
         autofocus: true,
@@ -54,7 +54,7 @@ class AddRuleScreen extends State<AddRule> {
       onTap: () {
         setState(() {
           _isEditingText = true;
-          _editingController.text = rule.ruleName;
+          // _editingController.text = rule.ruleName;
         });
       },
       child: Text(rule.ruleName,

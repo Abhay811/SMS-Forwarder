@@ -121,8 +121,13 @@ class _RuleListScreenState extends State<RuleListScreen> {
               );
             }),
           );
-          collection.rules[index] = rule;
-          print(collection.rules[index].ruleName);
+          if (rule != null) {
+            setState(() {
+              collection.rules[index] = rule;
+            });
+            print(collection.rules.length);
+          } else
+            print(collection.rules[index].ruleName);
         },
         child: Card(
           elevation: 3,
@@ -142,16 +147,7 @@ class _RuleListScreenState extends State<RuleListScreen> {
                       style: TextStyle(fontSize: 12, color: Colors.black54),
                     ),
                     Row(
-                      children: [
-                        Text(
-                          'From:',
-                          style: TextStyle(fontSize: 12, color: Colors.black54),
-                        ),
-                        Text(
-                          'From:',
-                          style: TextStyle(fontSize: 12, color: Colors.black54),
-                        ),
-                      ],
+                      children: buildList(collection.rules[index].forwardFrom),
                     )
                   ],
                 ),
@@ -161,6 +157,9 @@ class _RuleListScreenState extends State<RuleListScreen> {
                       'To:',
                       style: TextStyle(fontSize: 12, color: Colors.black54),
                     ),
+                    Row(
+                      children: buildList(collection.rules[index].forwardTo),
+                    )
                   ],
                 )
               ],
@@ -177,6 +176,37 @@ class _RuleListScreenState extends State<RuleListScreen> {
     return ListView(
       children: ruleCards,
     );
+  }
+
+  List<Widget> buildList(List<String> temp) {
+    int counter = 0;
+    String numbers = ' ';
+    temp.forEach((element) {
+      if ((numbers + element).length <= 44)
+        numbers += element + ', ';
+      else
+        counter++;
+    });
+    numbers = numbers.substring(0, numbers.length - 2);
+    List<Widget> elements = [];
+    elements.add(Text(
+      numbers,
+      style: TextStyle(fontSize: 12, color: Colors.black54),
+    ));
+    if (counter != 0)
+      elements.add(Container(
+        padding: EdgeInsets.all(2),
+        margin: EdgeInsetsDirectional.only(start: 10),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            border: Border.all(color: Colors.black54)),
+        child: Text(
+          '+' + counter.toString(),
+          style: TextStyle(fontSize: 12, color: Colors.black54),
+        ),
+      ));
+
+    return elements;
   }
 }
 /*
